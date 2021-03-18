@@ -37,6 +37,19 @@ service:
   port: 80
   targetPort: 5005
 
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: webapp.gitops.local
+      paths:
+        - /
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
 
 env:
   - name: NODE_NAME
